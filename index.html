@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohan Kumar | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar" id="home">
+      <div class="container nav-inner">
+        <a href="#home" class="brand">Rohan Kumar</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a href="#home">Home</a>
+          <a href="#experience">Experience</a>
+          <a href="#identity">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#projects">Blog</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#identity">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#projects">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
+    <main>
+      <section class="hero section" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <h1>Hey, I’m Rohan.</h1>
+            <h2>Software Engineer building scalable systems and thoughtful products.</h2>
+            <p>
+              Computer Science student at University of Minnesota – Twin Cities graduating Dec 2025 with experience in engineering, analytics, and product leadership.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Work</a>
+              <a href="resume.pdf" class="btn btn-secondary" download>Resume</a>
+              <a href="#contact" class="btn btn-outline">Contact</a>
+            </div>
+          </div>
+          <div class="hero-image-wrap">
+            <img src="profile.jpg" alt="Rohan Kumar" class="hero-image" />
+          </div>
+        </div>
+      </section>
+
+      <section class="identity section" id="identity">
+        <div class="container">
+          <h3 class="section-title">Identity</h3>
+          <div class="identity-grid">
+            <article class="card">
+              <h4>Engineer</h4>
+              <p>Designing reliable software with a strong systems mindset.</p>
+            </article>
+            <article class="card">
+              <h4>Product Thinker</h4>
+              <p>Balancing technical tradeoffs with clear user and business value.</p>
+            </article>
+            <article class="card">
+              <h4>Builder</h4>
+              <p>Shipping practical, maintainable solutions from concept to delivery.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about-content">
+          <h3 class="section-title">About</h3>
+          <p>
+            I’m a Computer Science student at the University of Minnesota, Twin Cities, graduating in Dec 2025. I enjoy working at the intersection of software engineering, data, and product execution.
+          </p>
+          <p>
+            On campus and beyond, I’ve been involved in ACM, Chess, Game Dev, Lettuce Club, Run Club, Badminton, SASE, CodePath, NSBE, and SHPE. These communities shaped how I lead, collaborate, and mentor others.
+          </p>
+          <p>
+            My approach emphasizes systems thinking, teaching, and ownership. I aim to build resilient systems, communicate clearly, and help teams move from ambiguity to outcomes.
+          </p>
+          <div class="stats-row">
+            <div class="stat">
+              <strong>200+</strong>
+              <span>students taught</span>
+            </div>
+            <div class="stat">
+              <strong>200,000+</strong>
+              <span>records processed</span>
+            </div>
+            <div class="stat">
+              <strong>35,000+</strong>
+              <span>users impacted</span>
+            </div>
+            <div class="stat">
+              <strong>67.5%</strong>
+              <span>ML accuracy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience section" id="experience">
+        <div class="container">
+          <h3 class="section-title">Experience</h3>
+          <div class="timeline">
+            <article class="timeline-item">
+              <h4>Project Manager – Air Care Alliance</h4>
+              <p class="date">Sep 2025 – Dec 2025</p>
+            </article>
+            <article class="timeline-item">
+              <h4>Computer Science Teaching Assistant – UMN</h4>
+              <p class="date">Aug 2023 – Jun 2025</p>
+            </article>
+            <article class="timeline-item">
+              <h4>Bioproducts &amp; Biosystems Engineering TA – UMN</h4>
+              <p class="date">Aug 2023 – Jun 2025</p>
+            </article>
+            <article class="timeline-item">
+              <h4>Data Analyst Intern – UMN Admissions</h4>
+              <p class="date">May 2022 – Aug 2022</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section" id="projects">
+        <div class="container">
+          <h3 class="section-title">Projects</h3>
+          <p class="projects-note">Selected work coming soon. Reach out for detailed case studies.</p>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="container contact-wrap">
+          <h3 class="section-title">Contact</h3>
+          <p><a href="mailto:kumar634@umn.edu">kumar634@umn.edu</a></p>
+          <p><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          <p><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+          <p><a href="https://rohank.dev" target="_blank" rel="noopener noreferrer">rohank.dev</a></p>
+          <a href="resume.pdf" class="btn btn-mustard" download>Download Resume</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="container">
+        <p>Rohan Kumar — <span id="year"></span></p>
+        <small>Building practical systems with clarity and ownership.</small>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
