@@ -365,16 +365,32 @@ a {
 }
 
 .exp-toggle {
+  position: relative;
   width: 100%;
   border: 0;
   background: transparent;
-  padding: 1.05rem 1.15rem;
+  padding: 1.05rem 2.8rem 1.05rem 1.15rem;
   text-align: left;
   cursor: pointer;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.exp-toggle::after {
+  content: "▾";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #0b2a5a;
+  transition: transform 0.2s ease;
+}
+
+.exp-item.open .exp-toggle::after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .exp-title {
@@ -414,8 +430,110 @@ a {
   color: #2d3446;
 }
 
-.projects-note {
-  color: var(--muted);
+.projects-accordion {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.55rem;
+  padding-left: 2rem;
+}
+
+.projects-accordion::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.65rem;
+  width: 4px;
+  border-radius: 999px;
+  background: #0b2a5a;
+}
+
+.project-item {
+  position: relative;
+  border: 1px solid #d7dfec;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(19, 34, 70, 0.08);
+}
+
+.project-item::before {
+  content: "";
+  position: absolute;
+  left: -1.58rem;
+  top: 1.2rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #0b2a5a;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px rgba(11, 42, 90, 0.22);
+}
+
+.project-toggle {
+  position: relative;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 1.05rem 2.8rem 1.05rem 1.15rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-toggle::after {
+  content: "▾";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #0b2a5a;
+  transition: transform 0.2s ease;
+}
+
+.project-item.open .project-toggle::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.project-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #16213c;
+}
+
+.project-date {
+  color: #374b7a;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.project-panel {
+  display: none;
+  padding: 0 1.15rem 1rem;
+}
+
+.project-item.open .project-panel {
+  display: block;
+}
+
+.project-meta {
+  color: #5a6072;
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+}
+
+.project-panel ul {
+  margin-left: 1.05rem;
+}
+
+.project-panel li {
+  margin-bottom: 0.45rem;
+  color: #2d3446;
 }
 
 /* FOOTER (UPDATED CLEAN VERSION) */
@@ -523,6 +641,18 @@ a {
     left: -0.98rem;
   }
 
+  .projects-accordion {
+    padding-left: 1.2rem;
+  }
+
+  .projects-accordion::before {
+    left: 0.2rem;
+  }
+
+  .project-item::before {
+    left: -0.98rem;
+  }
+
   .exp-toggle {
     flex-direction: column;
     align-items: flex-start;
@@ -530,6 +660,16 @@ a {
   }
 
   .exp-date {
+    white-space: normal;
+  }
+
+  .project-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .project-date {
     white-space: normal;
   }
 }
