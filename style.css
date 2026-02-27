@@ -430,6 +430,11 @@ a {
   color: #2d3446;
 }
 
+.exp-body {
+  color: #2d3446;
+  line-height: 1.7;
+}
+
 .projects-accordion {
   position: relative;
   display: grid;
@@ -534,6 +539,11 @@ a {
 .project-panel li {
   margin-bottom: 0.45rem;
   color: #2d3446;
+}
+
+.project-body {
+  color: #2d3446;
+  line-height: 1.7;
 }
 
 /* FOOTER (UPDATED CLEAN VERSION) */
