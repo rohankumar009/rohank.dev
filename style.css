@@ -250,8 +250,7 @@ a {
 
 .card p,
 .about-content p,
-.projects-note,
-.timeline-item .date {
+.projects-note {
   color: var(--muted);
 }
 
@@ -279,17 +278,70 @@ a {
   margin-bottom: 0.25rem;
 }
 
-.timeline {
-  border-left: 2px solid #dcdcdc;
-  margin-left: 0.4rem;
-  padding-left: 1.1rem;
+.experience-accordion {
   display: grid;
-  gap: 1.2rem;
+  gap: 0.8rem;
 }
 
-.timeline-item h4 {
-  font-size: 1.05rem;
-  margin-bottom: 0.15rem;
+.exp-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.exp-toggle {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 1rem 1.1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.exp-toggle:hover {
+  background: #fafafa;
+}
+
+.exp-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.exp-date {
+  color: var(--muted);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.exp-panel {
+  display: none;
+  padding: 0 1.1rem 1rem;
+}
+
+.exp-item.open .exp-panel {
+  display: block;
+}
+
+.exp-meta {
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+}
+
+.exp-panel ul {
+  margin-left: 1.1rem;
+}
+
+.exp-panel li {
+  margin-bottom: 0.45rem;
+  color: #2d2d2d;
 }
 
 .contact-wrap {
@@ -353,6 +405,14 @@ a {
   .identity-grid,
   .stats-row {
     grid-template-columns: 1fr;
+  }
+
+  .exp-toggle {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-date {
+    white-space: normal;
   }
 
   .hero {
