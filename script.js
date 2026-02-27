@@ -41,17 +41,7 @@ expItems.forEach((item) => {
   if (!toggle) return;
 
   toggle.addEventListener('click', () => {
-    const isOpen = item.classList.contains('open');
-
-    expItems.forEach((currentItem) => {
-      const currentToggle = currentItem.querySelector('.exp-toggle');
-      currentItem.classList.remove('open');
-      if (currentToggle) currentToggle.setAttribute('aria-expanded', 'false');
-    });
-
-    if (!isOpen) {
-      item.classList.add('open');
-      toggle.setAttribute('aria-expanded', 'true');
-    }
+    const isOpen = item.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
   });
 });

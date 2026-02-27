@@ -297,11 +297,26 @@ a {
   text-align: left;
   padding: 1rem 1.1rem;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 0.8rem;
   cursor: pointer;
   transition: background 0.2s ease;
+}
+
+.exp-toggle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  justify-self: end;
+}
+
+.exp-item.open .exp-toggle::after {
+  transform: rotate(-135deg);
 }
 
 .exp-toggle:hover {
@@ -404,10 +419,6 @@ a {
 
   .identity-grid,
   .stats-row {
-    grid-template-columns: 1fr;
-  }
-
-  .exp-toggle {
     grid-template-columns: 1fr;
   }
 
