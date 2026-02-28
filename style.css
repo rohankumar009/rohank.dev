@@ -215,6 +215,11 @@ a {
   border-color: #c8c8c8;
 }
 
+.btn-outline:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
 .btn-mustard {
   background: var(--mustard);
   color: #1d1d1d;
