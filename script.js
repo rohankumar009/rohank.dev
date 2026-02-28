@@ -2,11 +2,19 @@ const menuToggle = document.getElementById('menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
 const yearEl = document.getElementById('year');
+const brandLink = document.querySelector('.brand');
 const expItems = document.querySelectorAll('.exp-item');
 const projectItems = document.querySelectorAll('.project-item');
 
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
+}
+
+if (brandLink) {
+  brandLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
 
 if (menuToggle && mobileMenu) {
