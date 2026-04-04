@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,25 +13,43 @@
     <script defer src="/_vercel/insights/script.js"></script>
     <header class="navbar" id="home">
       <div class="container nav-inner">
-        <a href="#home" class="brand">Rohan Kumar</a>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <div class="menu-bar-shell">
+          <div class="menu-bar-left">
+            <a href="#home" class="brand">Rohan Kumar</a>
+            <nav class="nav-links" aria-label="Primary Navigation">
+              <a href="#experience">Experience</a>
+              <a href="#projects">Projects</a>
+              <a href="./Rohan%20Kumar%20Resume.pdf" download="Rohan-Kumar-Resume.pdf">Resume</a>
+              <a href="https://github.com/rohankumar009" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="#contact">Connect</a>
+            </nav>
+          </div>
+          <div class="menu-bar-right">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+              <span class="theme-toggle-track">
+                <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
+                  <span class="theme-glyph theme-glyph-sun"></span>
+                </span>
+                <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">
+                  <span class="theme-glyph theme-glyph-moon"></span>
+                </span>
+              </span>
+            </button>
+            <p class="menu-clock" id="menu-clock" aria-live="polite"></p>
+          </div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <nav class="nav-links" aria-label="Primary Navigation">
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-          <a href="https://github.com/rohankumar009" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </nav>
       </div>
       <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile Navigation">
-        <a href="#home">Home</a>
         <a href="#experience">Experience</a>
-        <a href="#identity">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#projects">Blog</a>
-        <a href="#contact">Contact</a>
+        <a href="./Rohan%20Kumar%20Resume.pdf" download="Rohan-Kumar-Resume.pdf">Resume</a>
+        <a href="https://github.com/rohankumar009" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#contact">Connect</a>
       </nav>
     </header>
 
@@ -41,14 +59,14 @@
           <div class="hero-content">
             <h1>Hey, I’m Rohan!</h1>
             <p class="hero-intro">
-              Welcome to my website!! I build things on the internet. I like to build ambitious side projects at 2am 🤩
+              Welcome to my website!! I like to build my projects at 2am 🤩
             </p>
             <p class="hero-intro hero-intro-soft">
               Computer Science Graduate from The University of Minnesota – Twin Cities with a vast experience in engineering, analytics, and
               product leadership. Along with my background in Computer Science and teaching, being a builder at heart I care about elegant code, thoughtful design, and solving problems that actually matter in Innovative ways. 
             </p>
             <p class="hero-intro hero-intro-soft"> 
-              Scroll down it's interesting!! 
+              Scroll down ⬇️ 
             </p> 
 
             <div class="hero-actions">
@@ -65,19 +83,19 @@
 
       <section class="identity section" id="identity">
         <div class="container">
-          <h3 class="section-title">Identity</h3>
+          <h3 class="section-title">My Focus</h3>
           <div class="identity-grid">
             <article class="card">
               <h4>Engineer</h4>
-              <p>Designing reliable software with a strong systems mindset.</p>
+              <p>Designing reliable software with a strong systems mindset</p>
             </article>
             <article class="card">
               <h4>Product Thinker</h4>
-              <p>Balancing technical tradeoffs with clear user and business value.</p>
+              <p>Balancing technical tradeoffs with clear user and business value</p>
             </article>
             <article class="card">
               <h4>Builder</h4>
-              <p>Shipping practical, maintainable solutions from concept to delivery.</p>
+              <p>Building things to ship practical, maintainable solutions from concept to delivery</p>
             </article>
           </div>
         </div>
@@ -87,8 +105,9 @@
         <div class="container about-content">
           <h3 class="section-title">About</h3>
           <p>
-            I’m a Computer Science student at the University of Minnesota, Twin Cities, graduating in Dec 2025. I enjoy working at the intersection of software engineering, data, and product execution.
-            On campus and beyond, I’ve been involved in ACM, Chess, Game Dev, Lettuce Club, Run Club, Badminton, SASE, CodePath, NSBE, and SHPE. These communities shaped how I lead, collaborate, and mentor others. My approach emphasizes systems thinking, teaching, and ownership. I aim to build resilient systems, communicate clearly, and help teams move from ambiguity to outcomes.
+            I’m a Computer Science graduate from the University of Minnesota, Twin Cities. I enjoy working at the intersection of software engineering, data, and product execution.
+            I’ve been involved in ACM, Chess, Game Dev, Lettuce Club, Run Club, Badminton, SASE, CodePath, NSBE, and SHPE. These communities shaped how I lead, collaborate, and mentor others. My approach emphasizes systems thinking, teaching, and ownership. 
+            I also like to learn new languages, I speak 3!!!
           </p>
           <div class="stats-row">
             <div class="stat">
@@ -247,7 +266,7 @@
         <h3 class="footer-title">Contact</h3>
     
         <div class="footer-links">
-          <a href="mailto:kumar634@umn.edu">kumar634@umn.edu</a>
+          <a href="mailto:kumarrohan7110@gmail.com">kumarrohan7110@gmail.com</a>
           <a href="https://www.linkedin.com/in/rohankumar09/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/rohankumar009" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
