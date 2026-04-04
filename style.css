@@ -6,6 +6,19 @@
   --border: #e5e5e5;
   --mustard: #FFC300;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --navbar-bg: rgba(255, 255, 255, 0.72);
+  --navbar-border: rgba(229, 229, 229, 0.8);
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #f0f0f0;
+  --muted: #aaaaaa;
+  --surface: #242424;
+  --border: #333333;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --navbar-bg: rgba(28, 28, 28, 0.82);
+  --navbar-border: rgba(60, 60, 60, 0.8);
 }
 
 * {
@@ -55,7 +68,7 @@ a {
   letter-spacing: -0.02em;
 }
 
-/* NAVBAR */
+/* NAVBAR — macOS menu bar style */
 
 .navbar {
   position: fixed;
@@ -63,40 +76,129 @@ a {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(229, 229, 229, 0.8);
+  background: var(--navbar-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--navbar-border);
 }
 
-.nav-inner {
-  min-height: 72px;
+.menubar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 52px;
+  padding: 0 1.25rem;
 }
 
-.brand {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.nav-links {
+.menubar-left {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0;
 }
 
-.nav-links a,
-.mobile-menu a {
-  font-size: 0.95rem;
-  color: #222;
+.menubar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.nav-links a:hover,
-.mobile-menu a:hover {
-  opacity: 0.7;
+/* Logo mark */
+.menubar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
 }
 
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: var(--mustard);
+  color: #111;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.menubar-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+  margin: 0 0.75rem;
+}
+
+.menubar-brand {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  margin-right: 0.25rem;
+}
+
+.menubar-links {
+  display: flex;
+  align-items: center;
+}
+
+.menubar-links a {
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.menubar-links a:hover {
+  background: rgba(128, 128, 128, 0.12);
+  opacity: 1;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(128, 128, 128, 0.12);
+}
+
+.icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+  display: none;
+}
+
+[data-theme="dark"] .icon-moon {
+  display: block;
+}
+
+/* Date/time widget */
+.menubar-datetime {
+  font-size: 0.84rem;
+  color: var(--text);
+  white-space: nowrap;
+  padding: 0 0.4rem;
+  letter-spacing: 0.01em;
+}
+
+/* Mobile hamburger — only visible on small screens */
 .menu-toggle {
   display: none;
   border: 0;
@@ -104,29 +206,44 @@ a {
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
+  padding: 4px;
+  margin-left: 0.25rem;
 }
 
 .menu-toggle span {
-  width: 24px;
+  width: 22px;
   height: 2px;
-  background: #1f1f1f;
+  background: var(--text);
+  display: block;
 }
 
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--navbar-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-top: 1px solid var(--border);
   padding: 0.8rem 4%;
 }
 
 .mobile-menu a {
   padding: 0.65rem 0;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.mobile-menu a:hover {
+  opacity: 0.7;
 }
 
 .mobile-menu.open {
   display: flex;
 }
+
+/* Keep legacy selectors working */
+.brand { display: none; }
+.nav-links { display: none; }
 
 /* HERO */
 
@@ -610,6 +727,95 @@ a {
   font-size: 1.05rem;
 }
 
+/* Dark mode for page content */
+
+[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+[data-theme="dark"] .identity {
+  background: linear-gradient(180deg, rgba(40,40,40,0.7) 0%, rgba(26,26,26,0.6) 100%);
+}
+
+[data-theme="dark"] .card {
+  background: #2a2a2a;
+  border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .card p {
+  color: #aab0c4;
+}
+
+[data-theme="dark"] .about-content > p {
+  background: #242424;
+  border-color: #333;
+  color: #c8cfe0;
+}
+
+[data-theme="dark"] .stat {
+  background: #242424;
+  border-color: #333;
+}
+
+[data-theme="dark"] .stat strong {
+  color: #a8c4ff;
+}
+
+[data-theme="dark"] .stat span {
+  color: #8892aa;
+}
+
+[data-theme="dark"] .exp-item,
+[data-theme="dark"] .project-item {
+  background: #242424;
+  border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .exp-title,
+[data-theme="dark"] .project-title {
+  color: #e8eaf0;
+}
+
+[data-theme="dark"] .exp-date,
+[data-theme="dark"] .project-date {
+  color: #8892b0;
+}
+
+[data-theme="dark"] .exp-body,
+[data-theme="dark"] .project-body {
+  color: #b0b8cc;
+}
+
+[data-theme="dark"] .exp-meta,
+[data-theme="dark"] .project-meta {
+  color: #8892b0;
+}
+
+[data-theme="dark"] .experience-accordion::before,
+[data-theme="dark"] .projects-accordion::before {
+  background: #4a6fa5;
+}
+
+[data-theme="dark"] .exp-item::before,
+[data-theme="dark"] .project-item::before {
+  background: #4a6fa5;
+}
+
+[data-theme="dark"] .footer {
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .footer-meta {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .hero-image {
+  border-color: #333;
+  box-shadow: 0 0 0 12px rgba(255,255,255,0.06), 0 18px 34px rgba(0,0,0,0.5);
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 1024px) {
@@ -626,15 +832,25 @@ a {
   }
 }
 
-@media (max-width: 768px) {
-  .nav-links {
+@media (max-width: 860px) {
+  .menubar-links {
+    display: none;
+  }
+
+  .menubar-brand {
+    display: none;
+  }
+
+  .menubar-divider {
     display: none;
   }
 
   .menu-toggle {
     display: flex;
   }
+}
 
+@media (max-width: 768px) {
   .footer-links {
     gap: 1rem 1.4rem;
   }
@@ -697,5 +913,9 @@ a {
 
   .btn {
     width: 100%;
+  }
+
+  .menubar-datetime {
+    display: none;
   }
 }
